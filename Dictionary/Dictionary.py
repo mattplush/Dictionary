@@ -1,11 +1,15 @@
 # uses Python dictionary collection to simulate an english dictionary. Enter a word to see its definitions
 
+import os
+
+absolute_path = os.path.dirname(__file__)
+relative_path = "Input/fullfile.txt"
+full_path = os.path.join(absolute_path, relative_path)
 
 my_dict = {}
 keep_going = True
 
-path = __file__[0:len(__file__)-13] + 'Input\\fullfile.txt'
-with open(path,'r') as dictFile:
+with open(full_path,'r') as dictFile:
 
     for line in dictFile:
         line = line.strip()
